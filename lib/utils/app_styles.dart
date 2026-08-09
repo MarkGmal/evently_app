@@ -5,6 +5,8 @@ import 'app_colors.dart';
 abstract class AppStyles {
   static TextStyle semi20Black = GoogleFonts.inter(
       fontSize: 20, fontWeight: FontWeight.w700, color: AppColors.blackColor);
+  static TextStyle semi20White = GoogleFonts.inter(
+      fontSize: 20, fontWeight: FontWeight.w700, color: AppColors.whiteColor);
   static TextStyle semi20Primary = GoogleFonts.inter(
       fontSize: 20, fontWeight: FontWeight.w700, color: AppColors.primaryLight);
 
