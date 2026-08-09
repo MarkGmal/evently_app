@@ -14,6 +14,28 @@ abstract class AppTheme {
         borderRadius: BorderRadiusGeometry.circular(30),
       ),
     ),
+
+
+    // bottomNavigationBarTheme
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      backgroundColor: AppColors.primaryLight,
+      type: BottomNavigationBarType.fixed,
+      selectedItemColor: Colors.white,
+      unselectedItemColor: Colors.white,
+      selectedLabelStyle: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
+      unselectedLabelStyle: TextStyle(
+        fontSize: 13,
+        fontWeight: FontWeight.w400,
+      ),
+    ),
+
+    // floatingActionButtonTheme
+    floatingActionButtonTheme: FloatingActionButtonThemeData(
+      backgroundColor: AppColors.primaryLight,
+      shape: StadiumBorder(side: BorderSide(color: Colors.white, width: 5)),
+    ),
+
+
   );
 
   static final ThemeData darkTheme = ThemeData(
@@ -27,5 +49,27 @@ abstract class AppTheme {
         borderRadius: BorderRadiusGeometry.circular(30),
       ),
     ),
+
+
+    // bottomNavigationBarTheme
+    bottomNavigationBarTheme: BottomNavigationBarThemeData(
+      backgroundColor: AppColors.primaryLight,
+      type: BottomNavigationBarType.fixed,
+      selectedItemColor: Colors.white,
+      unselectedItemColor: Colors.white,
+      selectedLabelStyle: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
+      unselectedLabelStyle: TextStyle(
+        fontSize: 13,
+        fontWeight: FontWeight.w400,
+      ),
+    ),
+
+    // floatingActionButtonTheme
+    floatingActionButtonTheme: FloatingActionButtonThemeData(
+      backgroundColor: AppColors.primaryLight,
+      shape: StadiumBorder(side: BorderSide(color: Colors.white, width: 5)),
+    ),
+
+
   );
 }

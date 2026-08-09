@@ -39,7 +39,7 @@ class MyApp extends StatelessWidget {
         AppRoutes.mainLayer: (context) => MainLayer(),
         AppRoutes.profileTab: (context) => ProfileTab(),
       },
-      initialRoute: AppRoutes.profileTab,
+      initialRoute: AppRoutes.mainLayer,
     );
   }
 }
