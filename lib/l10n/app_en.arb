@@ -6,6 +6,10 @@
   "theme" : "Theme",
   "dark" : "Dark",
   "light" : "Light",
-  "logout" : "Logout"
+  "logout" : "Logout",
+    "home" : "Home",
+    "map" : "Map",
+    "love" : "Love",
+    "profile" : "Profile"
 
 }
