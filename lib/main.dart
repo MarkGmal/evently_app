@@ -1,5 +1,8 @@
 import 'package:evently_app/Providers/app_language_provider.dart';
 import 'package:evently_app/Providers/app_theme_provider.dart';
+import 'package:evently_app/Tabs/Favorite%20Tab/favorite_tab.dart';
+import 'package:evently_app/Tabs/Home%20Tab/home_tab.dart';
+import 'package:evently_app/Tabs/Map%20Tab/map_tab.dart';
 import 'package:evently_app/Tabs/Profile%20Tab/profile_tab.dart';
 import 'package:evently_app/l10n/app_localizations.dart';
 import 'package:evently_app/main_layer.dart';
@@ -38,6 +41,9 @@ class MyApp extends StatelessWidget {
       routes: {
         AppRoutes.mainLayer: (context) => MainLayer(),
         AppRoutes.profileTab: (context) => ProfileTab(),
+        AppRoutes.homeTab: (context) => HomeTab(),
+        AppRoutes.mapTab: (context) => MapTab(),
+        AppRoutes.favoriteTab: (context) => FavoriteTab(),
       },
       initialRoute: AppRoutes.mainLayer,
     );
