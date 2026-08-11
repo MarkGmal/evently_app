@@ -1,6 +1,15 @@
 abstract class AppImages {
   /// Images
   static const String routeLogo = "assets/images/routeLogo.png";
+  static const String birthdayImage = "assets/images/birthday_image.png";
+  static const String bookClubImage = "assets/images/book_club_image.png";
+  static const String eatingImage = "assets/images/eating_image.png";
+  static const String gamingImage = "assets/images/gaming_image.png";
+  static const String holidayImage = "assets/images/holiday_image.png";
+  static const String meetingImage = "assets/images/meeting_image.png";
+  static const String sportImage = "assets/images/sport_image.png";
+  static const String workshopImage = "assets/images/workshop_image.png";
+
 
 
 

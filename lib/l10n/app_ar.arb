@@ -10,7 +10,20 @@
     "home" : "المنزل",
     "map" : "الموقع",
     "love" : "المفضلة",
-    "profile" : "الحساب"
+    "profile" : "الحساب",
+      "all": "الكل",
+      "sport": "رياضة",
+      "birthday": "عيد ميلاد",
+      "meeting": "اجتماع",
+      "gaming": "ألعاب",
+      "workshop": "ورشة عمل",
+      "book_club": "نادي الكتاب",
+      "exhibition": "معرض",
+      "holiday": "عطلة",
+      "eating": "تناول الطعام",
+      "welcomeBack" : " ✨ مرحبا بعودتك",
+      "searchForEvent": "البحث عن حدث"
+
 
 
 }

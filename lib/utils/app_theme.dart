@@ -4,10 +4,20 @@ import 'app_colors.dart';
 
 abstract class AppTheme {
   static final ThemeData lightTheme = ThemeData(
+    // colors
     primaryColor: AppColors.primaryLight,
     scaffoldBackgroundColor: AppColors.whiteBgColor,
-    textTheme: TextTheme(titleLarge: AppStyles.bold20Black),
+    focusColor: AppColors.whiteColor,
+    dividerColor: AppColors.primaryLight,
 
+    // textTheme
+    textTheme: TextTheme(
+      titleLarge: AppStyles.bold20Black,
+      bodyMedium: AppStyles.bold16Primary,
+      bodyLarge: AppStyles.medium16Primary,
+    ),
+
+    // bottomSheetTheme
     bottomSheetTheme: BottomSheetThemeData(
       backgroundColor: AppColors.whiteBgColor,
       shape: RoundedRectangleBorder(
@@ -15,7 +25,6 @@ abstract class AppTheme {
       ),
     ),
 
-
     // bottomNavigationBarTheme
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
       backgroundColor: AppColors.primaryLight,
@@ -34,15 +43,25 @@ abstract class AppTheme {
       backgroundColor: AppColors.primaryLight,
       shape: StadiumBorder(side: BorderSide(color: Colors.white, width: 5)),
     ),
-
-
   );
 
-  static final ThemeData darkTheme = ThemeData(
-    primaryColor: AppColors.primaryDark,
-    scaffoldBackgroundColor: AppColors.primaryDark,
-    textTheme: TextTheme(titleLarge: AppStyles.bold20White),
 
+
+  static final ThemeData darkTheme = ThemeData(
+    // colors
+  primaryColor: AppColors.primaryDark,
+    scaffoldBackgroundColor: AppColors.primaryDark,
+    focusColor: AppColors.primaryLight,
+    dividerColor: AppColors.whiteColor,
+
+    // textTheme
+    textTheme: TextTheme(
+      titleLarge: AppStyles.bold20White,
+      bodyMedium: AppStyles.bold16Black,
+      bodyLarge: AppStyles.medium16White,
+    ),
+
+    // bottomSheetTheme
     bottomSheetTheme: BottomSheetThemeData(
       backgroundColor: AppColors.primaryDark,
       shape: RoundedRectangleBorder(
@@ -50,10 +69,9 @@ abstract class AppTheme {
       ),
     ),
 
-
     // bottomNavigationBarTheme
     bottomNavigationBarTheme: BottomNavigationBarThemeData(
-      backgroundColor: AppColors.primaryLight,
+      backgroundColor: AppColors.primaryDark,
       type: BottomNavigationBarType.fixed,
       selectedItemColor: Colors.white,
       unselectedItemColor: Colors.white,
@@ -66,10 +84,8 @@ abstract class AppTheme {
 
     // floatingActionButtonTheme
     floatingActionButtonTheme: FloatingActionButtonThemeData(
-      backgroundColor: AppColors.primaryLight,
+      backgroundColor: AppColors.primaryDark,
       shape: StadiumBorder(side: BorderSide(color: Colors.white, width: 5)),
     ),
-
-
   );
 }
