@@ -1,9 +1,13 @@
-import 'package:evently_app/Tabs/Favorite%20Tab/Favorite%20widget/custom_text_field.dart';
+import 'package:evently_app/Common%20Widget/custom_text_field.dart';
 import 'package:evently_app/Tabs/Home%20Tab/Home%20widget/event_card.dart';
+import 'package:evently_app/l10n/app_localizations.dart';
+import 'package:evently_app/utils/app_colors.dart';
+import 'package:evently_app/utils/app_styles.dart';
 import 'package:flutter/material.dart';
 
 class FavoriteTab extends StatelessWidget {
-  const FavoriteTab({super.key});
+  FavoriteTab({super.key});
+  final TextEditingController searchController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +15,14 @@ class FavoriteTab extends StatelessWidget {
       child: Column(
         spacing: 0,
         children: [
-          CustomTextField(),
+          CustomTextFormField(
+            controller: searchController,
+            hintText: AppLocalizations.of(context)!.searchForEvent,
+            hintStyle: AppStyles.bold14Primary,
+            borderSideColor: AppColors.primaryLight,
+            prefixIcon: Icons.search,
+            iconColor: AppColors.primaryLight,
+          ),
           Expanded(
             child: ListView.separated(
               padding: EdgeInsets.zero,

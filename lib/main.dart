@@ -1,3 +1,6 @@
+import 'package:evently_app/Atuh/forget_password_screen.dart';
+import 'package:evently_app/Atuh/login_screen.dart';
+import 'package:evently_app/Atuh/registr_screen.dart';
 import 'package:evently_app/Providers/app_language_provider.dart';
 import 'package:evently_app/Providers/app_theme_provider.dart';
 import 'package:evently_app/Tabs/Favorite%20Tab/favorite_tab.dart';
@@ -44,6 +47,9 @@ class MyApp extends StatelessWidget {
         AppRoutes.homeTab: (context) => HomeTab(),
         AppRoutes.mapTab: (context) => MapTab(),
         AppRoutes.favoriteTab: (context) => FavoriteTab(),
+        AppRoutes.loginScreen: (context) => LoginScreen(),
+        AppRoutes.registrScreen: (context) => RegistrScreen(),
+        AppRoutes.forgetPasswordScreen: (context) => ForgetPasswordScreen(),
       },
       initialRoute: AppRoutes.mainLayer,
     );

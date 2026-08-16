@@ -9,12 +9,14 @@ abstract class AppTheme {
     scaffoldBackgroundColor: AppColors.whiteBgColor,
     focusColor: AppColors.whiteColor,
     dividerColor: AppColors.primaryLight,
+    hoverColor: AppColors.greyColor,
 
     // textTheme
     textTheme: TextTheme(
       titleLarge: AppStyles.bold20Black,
       bodyMedium: AppStyles.bold16Primary,
       bodyLarge: AppStyles.medium16Primary,
+      titleMedium: AppStyles.medium16Grey,
     ),
 
     // bottomSheetTheme
@@ -53,12 +55,14 @@ abstract class AppTheme {
     scaffoldBackgroundColor: AppColors.primaryDark,
     focusColor: AppColors.primaryLight,
     dividerColor: AppColors.whiteColor,
+    hoverColor: AppColors.whiteColor,
 
     // textTheme
     textTheme: TextTheme(
       titleLarge: AppStyles.bold20White,
       bodyMedium: AppStyles.bold16Black,
       bodyLarge: AppStyles.medium16White,
+      titleMedium: AppStyles.medium16White,
     ),
 
     // bottomSheetTheme
