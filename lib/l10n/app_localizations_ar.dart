@@ -12,7 +12,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get language => 'اللغة';
 
   @override
-  String get english => 'الانجليزية';
+  String get english => 'الإنجليزية';
 
   @override
   String get arabic => 'العربية';
@@ -30,10 +30,10 @@ class AppLocalizationsAr extends AppLocalizations {
   String get logout => 'تسجيل الخروج';
 
   @override
-  String get home => 'المنزل';
+  String get home => 'الرئيسية';
 
   @override
-  String get map => 'الموقع';
+  String get map => 'الخريطة';
 
   @override
   String get love => 'المفضلة';
@@ -72,8 +72,50 @@ class AppLocalizationsAr extends AppLocalizations {
   String get eating => 'تناول الطعام';
 
   @override
-  String get welcomeBack => ' ✨ مرحبا بعودتك';
+  String get welcomeBack => 'مرحبًا بعودتك ✨';
 
   @override
   String get searchForEvent => 'البحث عن حدث';
+
+  @override
+  String get email => 'البريد الإلكتروني';
+
+  @override
+  String get password => 'كلمة المرور';
+
+  @override
+  String get name => 'الاسم';
+
+  @override
+  String get rePassword => 'تأكيد كلمة المرور';
+
+  @override
+  String get forgetPassword => 'نسيت كلمة المرور';
+
+  @override
+  String get login => 'تسجيل الدخول';
+
+  @override
+  String get dontHaveAccount => 'ليس لديك حساب؟';
+
+  @override
+  String get createAccount => ' إنشاء حساب ';
+
+  @override
+  String get alreadyHaveAccount => 'لديك حساب بالفعل؟';
+
+  @override
+  String get or => 'أو';
+
+  @override
+  String get loginWithGoogle => 'تسجيل الدخول باستخدام Google';
+
+  @override
+  String get resetPassword => 'إعادة تعيين كلمة المرور';
+
+  @override
+  String get enterYourEmail => 'أدخل بريدك الإلكتروني';
+
+  @override
+  String get register => 'إنشاء حساب';
 }
