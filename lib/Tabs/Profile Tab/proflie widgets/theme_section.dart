@@ -2,7 +2,6 @@ import 'package:evently_app/Providers/app_theme_provider.dart';
 import 'package:evently_app/Tabs/Profile%20Tab/proflie%20widgets/theme_bottom_sheet.dart';
 import 'package:evently_app/l10n/app_localizations.dart';
 import 'package:evently_app/utils/app_colors.dart';
-import 'package:evently_app/utils/app_routes.dart';
 import 'package:evently_app/utils/app_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';

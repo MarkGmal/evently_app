@@ -10,6 +10,7 @@ abstract class AppTheme {
     focusColor: AppColors.whiteColor,
     dividerColor: AppColors.primaryLight,
     hoverColor: AppColors.greyColor,
+    canvasColor: AppColors.blackColor,
 
     // textTheme
     textTheme: TextTheme(
@@ -17,6 +18,7 @@ abstract class AppTheme {
       bodyMedium: AppStyles.bold16Primary,
       bodyLarge: AppStyles.medium16Primary,
       titleMedium: AppStyles.medium16Grey,
+      titleSmall: AppStyles.bold16White
     ),
 
     // bottomSheetTheme
@@ -56,6 +58,7 @@ abstract class AppTheme {
     focusColor: AppColors.primaryLight,
     dividerColor: AppColors.whiteColor,
     hoverColor: AppColors.whiteColor,
+    canvasColor: AppColors.whiteColor,
 
     // textTheme
     textTheme: TextTheme(
@@ -63,6 +66,7 @@ abstract class AppTheme {
       bodyMedium: AppStyles.bold16Black,
       bodyLarge: AppStyles.medium16White,
       titleMedium: AppStyles.medium16White,
+      titleSmall: AppStyles.bold16Black,
     ),
 
     // bottomSheetTheme

@@ -11,6 +11,7 @@ abstract class AppImages {
   static const String workshopImage = "assets/images/workshop_image.png";
   static const String eventlyLogo = "assets/images/evently_logo.png";
   static const String changeSetting = "assets/images/change-setting-1.png";
+  static const String eventLocationIcon = "assets/images/eventLocation_icon.png";
   /// SVG
   static const String favSelected = "assets/svg/fav_selected.svg";
   static const String favUnselected = "assets/svg/fav_unselected.svg";

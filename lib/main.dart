@@ -7,6 +7,7 @@ import 'package:evently_app/Tabs/Favorite%20Tab/favorite_tab.dart';
 import 'package:evently_app/Tabs/Home%20Tab/home_tab.dart';
 import 'package:evently_app/Tabs/Map%20Tab/map_tab.dart';
 import 'package:evently_app/Tabs/Profile%20Tab/profile_tab.dart';
+import 'package:evently_app/Add%20Event/add_event_screen.dart';
 import 'package:evently_app/l10n/app_localizations.dart';
 import 'package:evently_app/main_layer.dart';
 import 'package:evently_app/utils/app_routes.dart';
@@ -50,6 +51,7 @@ class MyApp extends StatelessWidget {
         AppRoutes.loginScreen: (context) => LoginScreen(),
         AppRoutes.registrScreen: (context) => RegistrScreen(),
         AppRoutes.forgetPasswordScreen: (context) => ForgetPasswordScreen(),
+        AppRoutes.addEventScreen: (context) => AddEventScreen(),
       },
       initialRoute: AppRoutes.mainLayer,
     );

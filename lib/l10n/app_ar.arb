@@ -43,5 +43,16 @@
   "resetPassword": "إعادة تعيين كلمة المرور",
   "enterYourEmail": "أدخل بريدك الإلكتروني",
 
-  "register": "إنشاء حساب"
+  "register": "إنشاء حساب",
+
+  "addEvent": "إضافة حدث",
+  "title": "العنوان",
+  "description": "الوصف",
+  "eventTitle": "عنوان الحدث",
+  "eventDescription": "وصف الحدث",
+  "eventDate": "تاريخ الحدث",
+  "eventTime": "وقت الحدث",
+  "chooseEventLocation": "اختر موقع الحدث",
+  "chooseDate": "اختر التاريخ",
+  "chooseTime": "اختر الوقت"
 }

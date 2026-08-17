@@ -12,7 +12,6 @@ class ForgetPasswordScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     TextEditingController forgetPassController = TextEditingController();
     var height = MediaQuery.of(context).size.height;
-    var width = MediaQuery.of(context).size.width;
     final fromKey = GlobalKey<FormState>();
     return Scaffold(
       appBar: AppBar(

@@ -41,6 +41,17 @@
   "loginWithGoogle": "Login With Google",
   "resetPassword": "Reset Password",
   "enterYourEmail": "Enter your email",
-  "register": "Register"
+  "register": "Register",
+
+  "addEvent": "Add Event",
+  "title": "Title",
+  "description": "Description",
+  "eventTitle": "Event Title",
+  "eventDescription": "Event Description",
+  "eventDate": "Event Date",
+  "eventTime": "Event Time",
+  "chooseEventLocation": "Choose Event Location",
+  "chooseDate": "Choose Date",
+  "chooseTime": "Choose Time"
 
 }

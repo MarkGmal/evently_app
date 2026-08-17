@@ -62,7 +62,10 @@ class _HomeHeaderState extends State<HomeHeader> {
                   spacing: 5,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(AppLocalizations.of(context)!.welcomeBack, style: AppStyles.regular14White),
+                    Text(
+                      AppLocalizations.of(context)!.welcomeBack,
+                      style: AppStyles.regular14White,
+                    ),
                     Text("Mark Gamal", style: AppStyles.bold24White),
                     Row(
                       spacing: 10,
@@ -124,6 +127,12 @@ class _HomeHeaderState extends State<HomeHeader> {
                 tabAlignment: TabAlignment.start,
                 tabs: eventsNameList.map((eventName) {
                   return EventCategory(
+                    borderColor: Theme.of(context).focusColor,
+                    selectedBgColor: Theme.of(context).focusColor,
+                    selectedIconColor: Theme.of(context).dividerColor,
+                    unSelectedIconColor: AppColors.whiteColor,
+                    selectedTextStyle: Theme.of(context).textTheme.bodyLarge!,
+                    unSelectedTextStyle: AppStyles.medium16White,
                     eventName: eventName,
                     eventIcon: iconsList[eventsNameList.indexOf(eventName)],
                     isSelected:
