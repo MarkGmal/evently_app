@@ -15,6 +15,7 @@ class CustomTextFormField extends StatelessWidget {
     this.obscureText = false,
     this.validator,
     this.iconColor,
+    this.maxLines = 1,
     required this.controller,
     required this.hintText,
   });
@@ -25,6 +26,7 @@ class CustomTextFormField extends StatelessWidget {
   IconData? prefixIcon;
   IconData? suffixIcon;
   Validator? validator;
+  int? maxLines;
   TextInputType keyboardType;
   bool obscureText;
   TextEditingController controller;
@@ -32,6 +34,7 @@ class CustomTextFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      maxLines: maxLines,
       keyboardType: keyboardType,
       obscureText: obscureText,
       validator: validator,

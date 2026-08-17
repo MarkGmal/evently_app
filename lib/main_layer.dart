@@ -5,6 +5,7 @@ import 'package:evently_app/Tabs/Home%20Tab/home_tab.dart';
 import 'package:evently_app/Tabs/Map%20Tab/map_tab.dart';
 import 'package:evently_app/Tabs/Profile%20Tab/profile_tab.dart';
 import 'package:evently_app/utils/app_images.dart';
+import 'package:evently_app/utils/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -24,7 +25,7 @@ class _MainLayerState extends State<MainLayer> {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          //TODO: Navigator to add event
+          Navigator.of(context).pushNamed(AppRoutes.addEventScreen);
         },
         child: Icon(Icons.add, color: Colors.white, size: 30),
       ),

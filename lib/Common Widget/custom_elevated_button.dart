@@ -1,7 +1,6 @@
 import 'package:evently_app/utils/app_colors.dart';
 import 'package:evently_app/utils/app_styles.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 typedef OnPressed = void Function();
 
@@ -13,6 +12,7 @@ class CustomElevatedButton extends StatelessWidget {
     this.textStyle,
     this.hasIcon = false,
     this.icon,
+    this.suffixIcon,
     this.backgroundColor = AppColors.primaryLight,
     this.borderColor = AppColors.transparentColor,
   });
@@ -22,6 +22,7 @@ class CustomElevatedButton extends StatelessWidget {
   TextStyle? textStyle;
   bool hasIcon;
   Widget? icon;
+  Widget? suffixIcon;
   OnPressed onPressed;
 
   @override
@@ -46,6 +47,8 @@ class CustomElevatedButton extends StatelessWidget {
                 children: [
                   icon ?? const SizedBox(),
                   Text(text, style: textStyle ?? AppStyles.medium20White),
+                  Spacer(),
+                  suffixIcon ?? SizedBox.shrink(),
                 ],
               )
             : Text(text, style: textStyle ?? AppStyles.medium20White),
