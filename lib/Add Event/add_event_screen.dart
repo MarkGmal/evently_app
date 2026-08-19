@@ -1,13 +1,17 @@
 import 'package:evently_app/Common%20Widget/custom_elevated_button.dart';
 import 'package:evently_app/Common%20Widget/custom_text_field.dart';
+import 'package:evently_app/Providers/app_location_provider.dart';
 import 'package:evently_app/Tabs/Home%20Tab/Home%20widget/event_category.dart';
 import 'package:evently_app/Add%20Event/event_time_or_date.dart';
 import 'package:evently_app/l10n/app_localizations.dart';
+import 'package:evently_app/location/location_picker.dart';
 import 'package:evently_app/utils/app_colors.dart';
 import 'package:evently_app/utils/app_images.dart';
+import 'package:evently_app/utils/app_routes.dart';
 import 'package:evently_app/utils/app_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:provider/provider.dart';
 
 class AddEventScreen extends StatefulWidget {
   const AddEventScreen({super.key});
@@ -30,6 +34,7 @@ class _AddEventScreenState extends State<AddEventScreen> {
     var width = MediaQuery.of(context).size.width;
     TextEditingController titleController = TextEditingController();
     TextEditingController descriptionController = TextEditingController();
+    var locationProvider = Provider.of<AppLocationProvider>(context);
     List<String> eventsNameList = [
       AppLocalizations.of(context)!.sport,
       AppLocalizations.of(context)!.birthday,
@@ -171,9 +176,13 @@ class _AddEventScreenState extends State<AddEventScreen> {
                 CustomElevatedButton(
                   borderColor: AppColors.primaryLight,
                   backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-                  text: AppLocalizations.of(context)!.chooseEventLocation,
+                  text:
+                      locationProvider.eventAddress ??
+                      AppLocalizations.of(context)!.chooseEventLocation,
                   textStyle: AppStyles.medium16Primary,
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.of(context).pushNamed(AppRoutes.locationPicker);
+                  },
                   hasIcon: true,
                   icon: Image.asset(AppImages.eventLocationIcon),
                   suffixIcon: Icon(

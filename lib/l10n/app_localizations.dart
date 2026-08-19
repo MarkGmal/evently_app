@@ -379,6 +379,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Choose Time'**
   String get chooseTime;
+
+  /// No description provided for @tapOnLocationToSelect.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap on Location To Select'**
+  String get tapOnLocationToSelect;
 }
 
 class _AppLocalizationsDelegate

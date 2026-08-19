@@ -148,4 +148,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get chooseTime => 'اختر الوقت';
+
+  @override
+  String get tapOnLocationToSelect => 'اضغط على الموقع للاختيار';
 }
