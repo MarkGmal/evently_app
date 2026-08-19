@@ -54,5 +54,6 @@
   "eventTime": "وقت الحدث",
   "chooseEventLocation": "اختر موقع الحدث",
   "chooseDate": "اختر التاريخ",
-  "chooseTime": "اختر الوقت"
+  "chooseTime": "اختر الوقت",
+  "tapOnLocationToSelect": "اضغط على الموقع للاختيار"
 }

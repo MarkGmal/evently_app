@@ -46,8 +46,13 @@ class CustomElevatedButton extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   icon ?? const SizedBox(),
-                  Text(text, style: textStyle ?? AppStyles.medium20White),
-                  Spacer(),
+                  Expanded(
+                    child: Text(
+                      text,
+                      style: textStyle ?? AppStyles.medium20White,
+                      softWrap: true,
+                    ),
+                  ),
                   suffixIcon ?? SizedBox.shrink(),
                 ],
               )

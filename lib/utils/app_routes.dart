@@ -8,4 +8,5 @@ abstract class AppRoutes {
   static const String registrScreen = "/registrScreen";
   static const String forgetPasswordScreen = "/forgetPasswordScreen";
   static const String addEventScreen = "/addEventScreen";
+  static const String locationPicker = "/locationPicker";
 }

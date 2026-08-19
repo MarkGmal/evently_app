@@ -40,6 +40,10 @@ dependencies:
   intl: any
   provider: ^6.1.5+1
   flutter_svg: ^2.2.3
+  google_maps_flutter: ^2.14.2
+  permission_handler: ^11.3.1
+  geolocator: ^14.0.2
+  geocoding: ^5.0.0
 
 dev_dependencies:
   flutter_test:

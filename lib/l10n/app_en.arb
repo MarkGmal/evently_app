@@ -52,6 +52,8 @@
   "eventTime": "Event Time",
   "chooseEventLocation": "Choose Event Location",
   "chooseDate": "Choose Date",
-  "chooseTime": "Choose Time"
+  "chooseTime": "Choose Time",
+
+  "tapOnLocationToSelect": "Tap on Location To Select"
 
 }
