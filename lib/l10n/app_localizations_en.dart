@@ -151,4 +151,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get tapOnLocationToSelect => 'Tap on Location To Select';
+
+  @override
+  String get noEventsFound => 'No events found';
 }

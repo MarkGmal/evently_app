@@ -1,11 +1,14 @@
+import 'package:evently_app/Models/event_model.dart';
 import 'package:evently_app/utils/app_colors.dart';
 import 'package:evently_app/utils/app_images.dart';
 import 'package:evently_app/utils/app_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:intl/intl.dart';
 
 class EventCard extends StatelessWidget {
-  const EventCard({super.key});
+  EventCard({super.key, required this.eventModel});
+  EventModel eventModel;
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +23,7 @@ class EventCard extends StatelessWidget {
       height: height * 0.25,
       decoration: BoxDecoration(
         image: DecorationImage(
-          image: AssetImage(AppImages.birthdayImage),
+          image: AssetImage(eventModel.eventImage),
           fit: BoxFit.fill,
         ),
         borderRadius: BorderRadiusGeometry.circular(8),
@@ -39,8 +42,14 @@ class EventCard extends StatelessWidget {
             ),
             child: Column(
               children: [
-                Text("10", style: AppStyles.bold20Primary),
-                Text("Nov", style: AppStyles.bold14Primary),
+                Text(
+                  eventModel.eventDateTime.day.toString(),
+                  style: AppStyles.bold20Primary,
+                ),
+                Text(
+                  DateFormat('MMM').format(eventModel.eventDateTime),
+                  style: AppStyles.bold14Primary,
+                ),
               ],
             ),
           ),
@@ -56,7 +65,7 @@ class EventCard extends StatelessWidget {
               children: [
                 Expanded(
                   child: Text(
-                    "This is a Birthday Party",
+                    eventModel.title,
                     style: AppStyles.bold16Black,
                     softWrap: true,
                   ),

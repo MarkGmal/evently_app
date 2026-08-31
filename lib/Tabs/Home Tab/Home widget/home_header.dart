@@ -1,3 +1,4 @@
+import 'package:evently_app/Providers/app_events_provider.dart';
 import 'package:evently_app/Providers/app_language_provider.dart';
 import 'package:evently_app/Providers/app_theme_provider.dart';
 import 'package:evently_app/Tabs/Home%20Tab/Home%20widget/event_category.dart';
@@ -17,26 +18,16 @@ class HomeHeader extends StatefulWidget {
 }
 
 class _HomeHeaderState extends State<HomeHeader> {
-  int selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
     var appThemeProvider = Provider.of<AppThemeProvider>(context);
     var appLanguageProvider = Provider.of<AppLanguageProvider>(context);
+    var appEventsProvider = Provider.of<AppEventsProvider>(context);
+    appEventsProvider.getEventsNameList(context);
     bool isDark = appThemeProvider.themeMode == ThemeMode.dark;
     bool isArabic = appLanguageProvider.languageCode == "ar";
 
-    List<String> eventsNameList = [
-      AppLocalizations.of(context)!.all,
-      AppLocalizations.of(context)!.sport,
-      AppLocalizations.of(context)!.birthday,
-      AppLocalizations.of(context)!.meeting,
-      AppLocalizations.of(context)!.gaming,
-      AppLocalizations.of(context)!.workshop,
-      AppLocalizations.of(context)!.book_club,
-      AppLocalizations.of(context)!.holiday,
-      AppLocalizations.of(context)!.eating,
-    ];
     List<IconData> iconsList = [
       Icons.all_inclusive,
       Icons.sports_soccer,
@@ -114,18 +105,17 @@ class _HomeHeaderState extends State<HomeHeader> {
             SizedBox(height: height * 0.03),
             DefaultTabController(
               //TODO: category logic
-              length: eventsNameList.length,
+              length: appEventsProvider.eventsNameList.length,
               child: TabBar(
                 onTap: (value) {
-                  selectedIndex = value;
-                  setState(() {});
+                appEventsProvider.changeSelectedIndex(value);
                 },
                 isScrollable: true,
                 dividerColor: AppColors.transparentColor,
                 indicatorColor: AppColors.transparentColor,
                 labelPadding: EdgeInsets.zero,
                 tabAlignment: TabAlignment.start,
-                tabs: eventsNameList.map((eventName) {
+                tabs: appEventsProvider.eventsNameList.map((eventName) {
                   return EventCategory(
                     borderColor: Theme.of(context).focusColor,
                     selectedBgColor: Theme.of(context).focusColor,
@@ -134,9 +124,13 @@ class _HomeHeaderState extends State<HomeHeader> {
                     selectedTextStyle: Theme.of(context).textTheme.bodyLarge!,
                     unSelectedTextStyle: AppStyles.medium16White,
                     eventName: eventName,
-                    eventIcon: iconsList[eventsNameList.indexOf(eventName)],
+                    eventIcon:
+                        iconsList[appEventsProvider.eventsNameList.indexOf(
+                          eventName,
+                        )],
                     isSelected:
-                        selectedIndex == eventsNameList.indexOf(eventName),
+                        appEventsProvider.selectedIndex ==
+                        appEventsProvider.eventsNameList.indexOf(eventName),
                   );
                 }).toList(),
               ),

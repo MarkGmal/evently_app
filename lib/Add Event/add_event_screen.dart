@@ -1,10 +1,12 @@
 import 'package:evently_app/Common%20Widget/custom_elevated_button.dart';
 import 'package:evently_app/Common%20Widget/custom_text_field.dart';
+import 'package:evently_app/FireBase/fire_store.dart';
+import 'package:evently_app/Models/event_model.dart';
+import 'package:evently_app/Providers/app_events_provider.dart';
 import 'package:evently_app/Providers/app_location_provider.dart';
 import 'package:evently_app/Tabs/Home%20Tab/Home%20widget/event_category.dart';
 import 'package:evently_app/Add%20Event/event_time_or_date.dart';
 import 'package:evently_app/l10n/app_localizations.dart';
-import 'package:evently_app/location/location_picker.dart';
 import 'package:evently_app/utils/app_colors.dart';
 import 'package:evently_app/utils/app_images.dart';
 import 'package:evently_app/utils/app_routes.dart';
@@ -25,16 +27,20 @@ class _AddEventScreenState extends State<AddEventScreen> {
   DateTime? selectedDate;
   String formatDate = "";
   TimeOfDay? selectedTime;
+  String selectedImage = "";
+  String selectedEventName = "";
   String formatTime = "";
   var formKey = GlobalKey<FormState>();
+  TextEditingController titleController = TextEditingController();
+  TextEditingController descriptionController = TextEditingController();
+  late AppEventsProvider eventsProvider;
 
   @override
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
     var width = MediaQuery.of(context).size.width;
-    TextEditingController titleController = TextEditingController();
-    TextEditingController descriptionController = TextEditingController();
     var locationProvider = Provider.of<AppLocationProvider>(context);
+    eventsProvider = Provider.of<AppEventsProvider>(context);
     List<String> eventsNameList = [
       AppLocalizations.of(context)!.sport,
       AppLocalizations.of(context)!.birthday,
@@ -45,6 +51,7 @@ class _AddEventScreenState extends State<AddEventScreen> {
       AppLocalizations.of(context)!.holiday,
       AppLocalizations.of(context)!.eating,
     ];
+    selectedEventName = eventsNameList[selectedIndex];
     List<String> eventImagesList = [
       AppImages.sportImage,
       AppImages.birthdayImage,
@@ -55,6 +62,7 @@ class _AddEventScreenState extends State<AddEventScreen> {
       AppImages.holidayImage,
       AppImages.eatingImage,
     ];
+    selectedImage = eventImagesList[selectedIndex];
     List<IconData> iconsList = [
       Icons.sports_soccer,
       Icons.cake,
@@ -89,7 +97,7 @@ class _AddEventScreenState extends State<AddEventScreen> {
               children: [
                 ClipRRect(
                   borderRadius: BorderRadiusGeometry.circular(16),
-                  child: Image.asset(eventImagesList[selectedIndex]),
+                  child: Image.asset(selectedImage),
                 ),
                 DefaultTabController(
                   length: eventsNameList.length,
@@ -231,6 +239,48 @@ class _AddEventScreenState extends State<AddEventScreen> {
   }
 
   void addEvent() {
-    formKey.currentState!.validate();
+    if (formKey.currentState!.validate() == true) {
+      if (selectedDate == null) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text("Please choose a date"),
+            backgroundColor: AppColors.redColor,
+          ),
+        );
+        return;
+      }
+      if (selectedTime == null) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          const SnackBar(
+            content: Text("Please choose a time"),
+            backgroundColor: AppColors.redColor,
+          ),
+        );
+        return;
+      }
+
+      EventModel eventModel = EventModel(
+        eventCategory: selectedEventName,
+        title: titleController.text,
+        description: descriptionController.text,
+        eventImage: selectedImage,
+        eventDateTime: selectedDate!,
+        eventTime: formatTime,
+      );
+      FireStore.addEvent(eventModel).timeout(
+        Duration(seconds: 1),
+        onTimeout: () {
+          print("Done");
+          Navigator.of(context).pop();
+        },
+      );
+    }
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    eventsProvider.getAllEvents();
   }
 }

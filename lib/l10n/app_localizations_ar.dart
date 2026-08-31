@@ -151,4 +151,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get tapOnLocationToSelect => 'اضغط على الموقع للاختيار';
+
+  @override
+  String get noEventsFound => 'لم يتم العثور على أحداث';
 }
