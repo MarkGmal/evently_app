@@ -28,7 +28,7 @@ class FavoriteTab extends StatelessWidget {
               padding: EdgeInsets.zero,
               itemCount: 10,
               itemBuilder: (context, index) {
-                return EventCard();
+                return Container();
               },
               separatorBuilder: (context, index) => SizedBox(),
             ),

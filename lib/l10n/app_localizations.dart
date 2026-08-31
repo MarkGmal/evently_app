@@ -385,6 +385,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Tap on Location To Select'**
   String get tapOnLocationToSelect;
+
+  /// No description provided for @noEventsFound.
+  ///
+  /// In en, this message translates to:
+  /// **'No events found'**
+  String get noEventsFound;
 }
 
 class _AppLocalizationsDelegate

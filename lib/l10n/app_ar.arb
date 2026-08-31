@@ -55,5 +55,6 @@
   "chooseEventLocation": "اختر موقع الحدث",
   "chooseDate": "اختر التاريخ",
   "chooseTime": "اختر الوقت",
-  "tapOnLocationToSelect": "اضغط على الموقع للاختيار"
+  "tapOnLocationToSelect": "اضغط على الموقع للاختيار",
+   "noEventsFound": "لم يتم العثور على أحداث"
 }

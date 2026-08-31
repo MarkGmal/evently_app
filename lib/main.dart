@@ -1,6 +1,8 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:evently_app/Atuh/forget_password_screen.dart';
 import 'package:evently_app/Atuh/login_screen.dart';
 import 'package:evently_app/Atuh/registr_screen.dart';
+import 'package:evently_app/Providers/app_events_provider.dart';
 import 'package:evently_app/Providers/app_language_provider.dart';
 import 'package:evently_app/Providers/app_location_provider.dart';
 import 'package:evently_app/Providers/app_theme_provider.dart';
@@ -9,21 +11,27 @@ import 'package:evently_app/Tabs/Home%20Tab/home_tab.dart';
 import 'package:evently_app/Tabs/Map%20Tab/map_tab.dart';
 import 'package:evently_app/Tabs/Profile%20Tab/profile_tab.dart';
 import 'package:evently_app/Add%20Event/add_event_screen.dart';
+import 'package:evently_app/firebase_options.dart';
 import 'package:evently_app/l10n/app_localizations.dart';
 import 'package:evently_app/location/location_picker.dart';
 import 'package:evently_app/main_layer.dart';
 import 'package:evently_app/utils/app_routes.dart';
 import 'package:evently_app/utils/app_theme.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  await FirebaseFirestore.instance.disableNetwork();
   runApp(
     MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (context) => AppLanguageProvider()),
         ChangeNotifierProvider(create: (context) => AppThemeProvider()),
         ChangeNotifierProvider(create: (context) => AppLocationProvider()),
+        ChangeNotifierProvider(create: (context) => AppEventsProvider()),
       ],
       child: const MyApp(),
     ),

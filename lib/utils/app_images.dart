@@ -12,6 +12,10 @@ abstract class AppImages {
   static const String eventlyLogo = "assets/images/evently_logo.png";
   static const String changeSetting = "assets/images/change-setting-1.png";
   static const String eventLocationIcon = "assets/images/eventLocation_icon.png";
+  static const String img1 = "assets/onBoarding/img1.png";
+  static const String img2 ="assets/onBoarding/img2.png";
+  static const String img3 = "assets/onBoarding/img3.png";
+  static const String img4 = "assets/onBoarding/img4.png";
   /// SVG
   static const String favSelected = "assets/svg/fav_selected.svg";
   static const String favUnselected = "assets/svg/fav_unselected.svg";

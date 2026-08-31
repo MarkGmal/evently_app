@@ -54,6 +54,7 @@
   "chooseDate": "Choose Date",
   "chooseTime": "Choose Time",
 
-  "tapOnLocationToSelect": "Tap on Location To Select"
+  "tapOnLocationToSelect": "Tap on Location To Select",
+   "noEventsFound": "No events found"
 
 }
