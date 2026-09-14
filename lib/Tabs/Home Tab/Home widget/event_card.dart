@@ -1,10 +1,12 @@
 import 'package:evently_app/Models/event_model.dart';
+import 'package:evently_app/Providers/app_events_provider.dart';
 import 'package:evently_app/utils/app_colors.dart';
 import 'package:evently_app/utils/app_images.dart';
 import 'package:evently_app/utils/app_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:intl/intl.dart';
+import 'package:provider/provider.dart';
 
 class EventCard extends StatelessWidget {
   EventCard({super.key, required this.eventModel});
@@ -14,6 +16,7 @@ class EventCard extends StatelessWidget {
   Widget build(BuildContext context) {
     var height = MediaQuery.of(context).size.height;
     var width = MediaQuery.of(context).size.width;
+    var appEventsProvider = Provider.of<AppEventsProvider>(context);
     return Container(
       margin: EdgeInsets.symmetric(
         horizontal: width * 0.03,
@@ -71,14 +74,24 @@ class EventCard extends StatelessWidget {
                   ),
                 ),
                 IconButton(
-                  onPressed: () {},
-                  icon: SvgPicture.asset(
-                    AppImages.favUnselected,
-                    colorFilter: ColorFilter.mode(
-                      AppColors.primaryLight,
-                      BlendMode.srcIn,
-                    ),
-                  ),
+                  onPressed: () {
+                    appEventsProvider.updateFavoriteEvents(eventModel);
+                  },
+                  icon: eventModel.isFavorite == true
+                      ? SvgPicture.asset(
+                          AppImages.favSelected,
+                          colorFilter: ColorFilter.mode(
+                            AppColors.primaryLight,
+                            BlendMode.srcIn,
+                          ),
+                        )
+                      : SvgPicture.asset(
+                          AppImages.favUnselected,
+                          colorFilter: ColorFilter.mode(
+                            AppColors.primaryLight,
+                            BlendMode.srcIn,
+                          ),
+                        ),
                 ),
               ],
             ),
